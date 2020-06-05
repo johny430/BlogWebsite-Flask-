@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<link rel="stylesheet" href="{{ url_for('static', filename='article.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <title>{{ articles.title }}</title>
+</head>
+<body>
+	<div class="upmenu">
+		<a href="{{ url_for('index')}}" class="logotip">Блог</a>
+        <div class="upmenuspan">
+            {% if user == None %}
+                <a href="{{ url_for('login_page') }}">Войти</a>
+                <a href="{{ url_for('register') }}">Зарегистрироваться</a>
+            {% else %}
+                <a href="{{ url_for('createarticle') }}">Создать статью</a>
+                <a href="{{ url_for('logout') }}" style="color: red">Выйти</a>
+            {% endif %}
+        </div>
+    </div>
+    {% if articles %}
+	<h1>{{ articles.title }}</h1>
+	<div class="articletext">
+        <p>
+            {{ articles.text }}
+        </p>
+        <div class="downmenu">
+            <p class="date">
+                {{ articles.date }}
+            </p>
+            <p >
+                {{ author.login }}
+            </p>
+        </div>
+    </div>
+    {% else %}
+    <p style="font-size: 100px;margin: 0 auto;text-align: center;color: #ffffff;">Такой статьи не существует!</p>
+    {% endif %}
+    <form method="post">
+        <p class="vvedite">Напишите ваш комментраий!</p>
+        <textarea placeholder="Введите текст комментария" class="inp" name="text"></textarea>
+        <input type="submit" class="script">
+    </form>
+    {% if comments %}
+        <div class="comments">
+            <p class="com">Комментарии</p>
+            {% for el in comments %}
+                <div class="comnn">
+                    <p>{{ el.text }}</p>
+                    <div class="a">
+                        <p class="data">{{ el.date }}</p>
+                        <p>{{ el.user_username }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p style="font-size: 70px;margin: 0 auto;text-align: center;color: #ffffff;width: 75%;margin-top: 50px  ">Комментариев пока что нет!Оставьте комментарии первым!</p>
+    {% endif %}
+	<div class="font">
+	    Как всегда контактов нет!<span class="ola">Я сам вас найду(если вы хотите конечно же)!</span>
+	</div>
+</body>
+</html>

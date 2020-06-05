@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru  ">
+<link rel="stylesheet" href="{{ url_for('static', filename='register.css')}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <title>Регистрация</title>
+</head>
+<body>
+	<div class="upmenu">
+		<a href="{{ url_for('index')}}" class="logotip">Блог</a>
+        <div class="upmenuspan">
+            <a href="{{url_for('login_page')}}">Вход</a>
+            <a href="{{url_for('allarticles')}}">Все статьи</a>
+        </div>
+	</div>
+    <div class="registrmenu">
+        <div class="subhead">
+            <h1>Регистрация</h1>
+		</div>
+        <form method="post" name="myForm">
+            <div class="formi">
+                <div class="part1">
+                <input placeholder="Логин" tabindex="1" name="username" type="text" class="name1" />
+                <input placeholder="Пароль" tabindex="11" name="password" type="password" class="pass1" />
+                <button tabindex="11" type="submit" class="btn1" onclick="validateForm()">Отправить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+	<div class="font">
+	Как всегда контактов нет!<span class="ola">Я сам вас найду(если вы хотите конечно же)!</span>
+	</div>
+</body>
+</html>

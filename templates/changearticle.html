@@ -1,0 +1,16 @@
+{% extends 'createarticle.html' %}
+{% block title %}
+   Редактировать статью
+{% endblock %}
+{% block cont %}
+{% endblock %}
+{% block nav %}
+    <a href="{{ url_for('createarticle') }}">Назад в личный кабинет</a>
+{% endblock %}
+{% block h1 %}
+    <h1 style="line-height: 1.00;">Редактирование статьи</h1>
+{% endblock %}
+{% block nazv %}<h2>Введите новое название</h2>{% endblock %}
+{% block text %}<h3>Введите новый текст статьи</h3>{% endblock %}
+{% block inp1 %}<input class="title" name="title" type="text" value="{{ articles.title }}">{% endblock %}
+{% block inp2 %}<textarea class="text" name="text" type="text">{{ articles.text }}</textarea>{% endblock %}

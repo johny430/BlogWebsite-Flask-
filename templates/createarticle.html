@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<link rel="stylesheet" href="{{ url_for('static', filename='createarticle.css')}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <title>{% block title %}Личный кабинет{% endblock %}</title>
+</head>
+<body>
+<div class="nav">
+    <a href="{{ url_for('allarticles') }}">Все статьи</a>
+    <div class="all">
+    {% block nav %}
+        <a href="javascript:void(0);" onclick="toggle1()">Мои статьи</a>
+        <a href="javascript:void(0);" onclick="toggle2()">Мои комменты</a>
+        <a href="{{ url_for('logout') }}" style="color: red">Выйти</a>
+    {% endblock %}
+    </div>
+</div>
+{% block cont %}
+<div id="myLinks" class="articlesmenu">
+    {% if articles %}
+    {% for el in articles %}
+        <div class="myarticles">
+            <a href="/article/{{ el.id }}" class="myarticles_title">{{ el.title }}</a>
+            <p class="myarticles_text">{{ el.text }}</p>
+            <p class="myarticles_date">{{ el.date }}</p>
+            <div class="ddd">
+                <a href="/article/{{el.id}}/delete" class="del">Удалить</a>
+                <a href="/article/{{ el.id }}/change" class="chg">Редактировать</a>
+            </div>
+        </div>
+    {% endfor %}
+    {% else %}
+    <p style="font-size: 20px;color: white;text-align: center">Статей нет</p>
+    {% endif %}
+</div>
+<div id="myLinks1" class="articlesmenu">
+{% if comments %}
+    {% for el in comments %}
+        <div class="myarticles">
+            <p class="myarticles_text">{{ el.text }}</p>
+            <p class="myarticles_date">{{ el.date }}</p>
+            <div class="ddd">
+                <a href="/comment/{{el.id}}/delete" class="del">Удалить</a>
+                <a href="/comment/{{ el.id }}/change" class="chg">Редактировать</a>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p style="font-size: 20px;color: white;text-align: center">Комментариев нет</p>
+{% endif %}
+</div>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li style="color: white;text-align: center;font-size: 30px;margin: 0 auto;display: block;padding-top: 30px">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% endblock %}
+{% block h1 %}
+<h1>Создать статью</h1>
+{% endblock %}
+<form class="content" name="myForm" method="post">
+    {% block nazv %}<h2>Введите название</h2>{% endblock %}
+    {% block inp1 %}<input class="title" name="title" type="text">{% endblock %}
+    {% block text %}<h3>Введите текст статьи</h3>{% endblock %}
+    {% block inp2 %}<textarea class="text" name="text" type="text"></textarea>{% endblock %}<br>
+    <button class="btn" type="submit">Отправить</button>
+</form>
+<div class="f2">
+	    Контактов нет!<span class="fonter">Я сам вас найду!</span>
+</div>
+<script>
+    function toggle1()  {
+        var x = document.getElementById("myLinks");
+        var z = document.getElementById("myLinks1");
+        if (x.style.display === "block") {
+        x.style.display = "none";
+        z.style.display = "none";
+      } else {
+        x.style.display = "block";
+        z.style.display = "none";
+      }
+    }
+    function toggle2()  {
+        var x = document.getElementById("myLinks1");
+        var z = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+        x.style.display = "none";
+        z.style.display = "none";
+      } else {
+        x.style.display = "block";
+        z.style.display = "none";
+      }
+    }
+</script>
+</body>
+</html>

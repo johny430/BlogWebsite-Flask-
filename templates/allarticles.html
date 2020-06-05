@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<link rel="stylesheet" href="{{ url_for('static', filename='allarticles.css')}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <title>Все статьи</title>
+</head>
+<body>
+    <div class="upmenu">
+        <div class="s">
+            <a href="{{url_for('index')}}" class="logotip">Блог</a>
+        </div>
+        <div class="s3">
+            {% if user == None %}
+                <a href="{{ url_for('login_page') }}" class="upmenuspan">Войти</a>
+                <a href="{{ url_for('register') }}" class="upmenuspan">Зарегистрироваться</a>
+            {% else %}
+                <a href="{{ url_for('createarticle') }}" class="upmenuspan">Создать статью</a>
+                <a href="{{ url_for('logout') }}" style="color: red" class="upmenuspan">Выйти</a>
+            {% endif %}
+        </div>
+    </div>
+    <h1>Все статьи</h1>
+    {% if articles %}
+    <div class="articles">
+        <p>Список статей</p>
+        {% for el in articles %}
+        <div class="article">
+            <h3>{{ el.title }}</h3>
+            <p class="articletext">{{ el.text }}</p>
+            <a href="/article/{{ el.id }}" class="readmore">Читать дальше</a>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <p class="oi" >Ой,похоже статей нет!Удивлен?Значит не читал о блоге!</p>
+    {% endif %}
+    <div class="font">
+        Как всегда контактов нет!<span class="ola">Я сам вас найду(если вы хотите конечно же)!</span>
+    </div>
+</body>
+</html>
