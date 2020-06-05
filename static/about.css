@@ -1,0 +1,106 @@
+html::-webkit-scrollbar { width: 0; }
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+body{
+	background-image: url(backland.jpg); 
+}
+.upmenu{
+	padding: 15px;
+	background: #ad7835;
+	height: 50px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.upmenuspan{
+	font-family: Raleway;
+	font-size: 20px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	letter-spacing: normal;
+	text-align: center;
+	color: white;
+}
+.logotip{
+	font-family: Raleway;
+	font-size: 20px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	letter-spacing: normal;
+	color: white;
+	text-align: center;
+}
+.h1{
+	border: 10px solid #ad7835;
+	margin-top:100px;
+	font-family: DroidSerif;
+	font-size: 185.3px;
+	line-height: 115px;
+	font-weight: 400;
+	color: #ffffff;
+	line-height: 80%;
+	padding-left: 45px;
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 100px;
+	text-align: center;
+	padding: 35px;
+}
+h1 span{
+	font-family: DroidSerif;
+	text-align: center;
+	margin: 0 auto;
+}
+.abouttext{
+	width: 70%;
+	margin: 0 auto;
+	border: 1px solid #ad7835;
+	background: #8d714a;
+	margin-top: 100px;
+	padding: 50px;
+	font-size: 39px;
+	font-family: Raleway;
+	color: white;
+}
+.font{
+	background: #373737;
+	height: 50px;
+	font-size: 20px;
+	padding: 12.5px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+}

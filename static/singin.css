@@ -1,0 +1,138 @@
+html::-webkit-scrollbar { width: 0; }
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+body{
+	background-image: url(backland.jpg); 
+}
+.upmenu{
+	background: #ad7835;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	height: 50px;
+}
+.upmenuspan a{
+	font-family: DroidSerif;
+	font-size: 20px;
+	text-align: center;
+	color: white;
+	padding: 5px;
+}
+.logotip{
+	font-family: DroidSerif;
+	font-size: 20px;
+	text-align: center;
+	color: white;
+}
+.font{
+	font-size: 20px;
+	background: #373737;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	margin-top: 105px;
+}
+.subhead{
+	margin-bottom: 35px;
+	padding: 25px;
+}
+h1{
+	font-family: DroidSerif;
+	font-size: 100px;
+	line-height: 100px;
+	font-weight: 400;
+	color: #ffffff;
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;
+}
+.registrmenu{
+	background: #373737;
+	margin-top: 30px;
+	width: 46%;
+	margin: 0 auto;
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+}
+.vxod{
+	width: 45%;
+	font-size: 40px;
+	text-align: center;
+	border: 1px solid white;
+}
+.registr{
+	width: 45%;
+	font-size: 40px;
+	text-align: center;
+}
+.downmenu{
+	height: 75%;
+	width: 100%;
+	display: flex;
+}
+.part1{
+	display: block;
+	border: 1px solid black;
+	height: 75%;
+	width: 100%;
+	position: relative;
+}
+.name1{
+	width: 100%;
+	background: gray;
+	height: 50px;
+	opacity: 0.7;
+}
+.pass1{
+	width: 100%;
+	background: gray;
+	height: 50px;
+	border-top: 1px solid black;
+	opacity: 0.7;
+}
+.btn1{
+	color: black;
+	background: grey;
+	width: 75%;
+	height: 55px;
+	margin: 30px 12.5% 30px 12.5%;
+}
+.flashes{
+	font-size: 20px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+}

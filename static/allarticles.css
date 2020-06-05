@@ -1,0 +1,140 @@
+html::-webkit-scrollbar { width: 0; }
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+body{
+	background-image: url(backland.jpg); 
+}
+.oi{
+	font-size: 100px;
+	display: block;
+	color: white;
+	text-align: center;
+	margin-bottom: 149px;
+}
+.logotip{
+	  font-family: Raleway;
+	  font-size: 20px;
+	  font-weight: bold;
+	  font-stretch: normal;
+	  font-style: normal;
+	  letter-spacing: normal;
+	  text-align: center;
+	  color: white;
+}
+.upmenu{
+	background: #ad7835;
+	display: flex;
+	justify-content: space-between;
+	height: 50px;
+	padding: 15px;
+}
+.upmenuspan{
+	font-family: Raleway;
+	font-size: 20px;
+	text-align: center;
+	color: white;
+	padding: 5px;
+}
+h1{
+	font-family: Raleway;
+	font-size: 100px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 2.08;
+	letter-spacing: normal;
+	text-align: center;
+	color: white;
+	margin: 0 auto;
+	width: 75%;
+}
+.articles p{
+	font-size: 40px;
+	text-align: center;
+	font-family: Raleway;
+	color: #ffffff;
+}
+.font{
+	background: #373737;
+	height: 50px;
+	font-size: 20px;
+	padding: 12.5px;
+	display: flex;
+	justify-content: space-between;
+}
+.articles{
+	display: flex;
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 100px;
+	background: #373737;
+	padding: 50px;
+	flex-direction:column;
+	justify-content: space-between;
+}
+.articles div{
+	position: relative;
+	border: 1px solid black;
+	background: gray;
+	margin-top: 30px;
+	display: block;
+	padding: 30px;
+}
+h3{
+	font-family: DroidSerif;
+	font-size: 40px;
+	max-width: 100%;
+	text-transform: uppercase;
+	color: #be9e6e;
+	margin: 0 auto;
+	text-align: center;
+}
+.articletext{
+	font-family: Raleway;
+	font-size: 20px;
+	color: #ffffff;
+	margin-top: 30px;
+	text-align: left;
+	word-wrap: break-word;
+	max-height: 280px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.readmore{
+	font-family: Raleway;
+	color: #ffffff;
+	margin: 30px 0 0 0;
+	display: block;
+	font-size: 25px;
+	color: #be9e6e;
+}
